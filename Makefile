@@ -43,12 +43,21 @@ validate:
 	@# name problem:  project must be [^a-zA-Z0-9_]+ $(PROJ)
 	@echo "$(PROJ)"  | grep -E -v '[^a-zA-Z0-9_]+' > /dev/null
 
-new_dice: validate
+
+projdir:
 	mkdir -p jobs/$(PROJ)
+
+new_dice: validate projdir
 	cp -r src/dice/* jobs/$(PROJ)
 
 	perl -pi -e s/dice_graph_job_name/$(PROJ)_dice_graph/g jobs/$(PROJ)/*
 	@echo "$$NEXTSTEPS"
+
+#new_all_messages: validate projdir
+#	cp -r src/all_messages/* jobs/$(PROJ)
+#
+#	perl -pi -e s/dice_graph_job_name/$(PROJ)_dice_graph/g jobs/$(PROJ)/*
+#	@echo "$$NEXTSTEPS"
 
 clean:
 	@echo "to clean: \n"
