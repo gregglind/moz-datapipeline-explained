@@ -15,4 +15,4 @@ Creates a new datapipepline example filter job, with supporting `Makefile`.
 
 - https://mana.mozilla.org/wiki/display/CLOUDSERVICES/Exploring+with+the+Mozilla+Data+Pipeline+Demo
 
-- #datapipeline irc
+- irc #datapipeline
