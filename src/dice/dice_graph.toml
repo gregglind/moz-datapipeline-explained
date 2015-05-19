@@ -1,0 +1,17 @@
+# source:  https://gist.githubusercontent.com/rafrombrc/1e7c5f2085a04d69e584/raw/ae5c319e1dc4d5956cfca89e013e70f2f85b7705/dice_graph.toml -o skel/dice_graph.toml
+
+# toml is like INI, but with sub-sections
+# https://github.com/toml-lang/toml#user-content-editor-support
+
+
+# this will be the name of the job.  must  be [a-zA-Z_]
+[dice_graph_job_name]
+type = "SandboxFilter"
+message_matcher = "Fields[X-Heka-Routing] == 'dice'"
+ticker_interval = 10
+preserve_data = true
+
+  [dice_graph.config]
+  preservation_version = 1
+  rows = 240
+  sec_per_row = 5

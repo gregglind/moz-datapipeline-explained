@@ -1,0 +1,14 @@
+ip_address       = "pipeline-prototype-cep.dev.mozaws.net:5565"
+use_tls          = true
+
+[signer]
+    name         = "prototype"
+    hmac_hash    = "md5"
+    hmac_key     = ""
+    version      = 0
+
+[tls]
+    insecure_skip_verify = false
+    client_auth = "NoClientCert"
+    prefer_server_ciphers = true
+    min_version = "TLS11"
